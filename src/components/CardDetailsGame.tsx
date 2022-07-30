@@ -5,7 +5,7 @@ import { FormateStore } from '../utils/FormateStore'
 import FormateTimestamp from '../utils/FormateTimestamp'
 
 function CardDetailsGame({ details }: any) {
-    console.log(details)
+    
     const { gameInfo, cheapestPrice } = details
     const {steamRatingPercent, thumb, releaseDate, name, metacriticScore, gameID, salePrice, retailPrice, storeID } = gameInfo
     const { price, date } = cheapestPrice

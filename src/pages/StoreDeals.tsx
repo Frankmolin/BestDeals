@@ -32,8 +32,9 @@ function StoreDeals() {
                 {
                     loading || store.length == 0 && <Page404 />
                 }
+                    <h1 className='display-5 text-center my-2'>Some deals</h1>
                 {!loading ?
-
+                
                     <InfiniteScroll
                         dataLength={store.length} //This is important field to render the next data
                         next={addmore}
@@ -47,7 +48,7 @@ function StoreDeals() {
                                 <b>Yay! You have seen it all</b>
                             </p>
                         }
-                        className='m-4 row justify-content-center row-cols-1 row-cols-sm-4 row-cols-md-4 row-cols-lg-6 g-3'
+                        className='m-4 overflow-hidden row justify-content-center row-cols-1 row-cols-sm-4 row-cols-md-4 row-cols-lg-6 g-3'
                     >
                         {store.map((game: any) => <CardGame key={v4()} game={game} />)}
                     </InfiniteScroll>
