@@ -16,7 +16,7 @@ function StoreDeals() {
     const [page, setPage] = useState(0)
     const url = `https://www.cheapshark.com/api/1.0/deals?storeID=${storeID}&pageNumber=${page}`
     const [store, loading, setStore] = useFetch(`https://www.cheapshark.com/api/1.0/deals?storeID=${storeID}&pageNumber=0`)
-    
+
     const addmore = () => {
         setPage((page) => page + 1)
         axios.get(url).then((data) => {
@@ -38,7 +38,10 @@ function StoreDeals() {
                         dataLength={store.length} //This is important field to render the next data
                         next={addmore}
                         hasMore={true}
-                        loader={<h4>Loading...</h4>}
+                        loader={<div className='text-center mt-3'>
+                            <span className="spinner-border spinner-border" role="status" aria-hidden="true"></span>
+
+                        </div>}
                         endMessage={
                             <p style={{ textAlign: 'center' }}>
                                 <b>Yay! You have seen it all</b>
